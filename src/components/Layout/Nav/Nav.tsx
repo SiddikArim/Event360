@@ -1,22 +1,23 @@
 import { NavLink } from "react-router-dom";
-import Container from "../ui/Container";
 
 const Nav = () => {
   return (
-    <Container className="bg-red-500 rounded-lg ">
-      <div className="flex justify-between">
-        <div>
-          <NavLink to="/">
-            <h1>Event360</h1>
-          </NavLink>
-        </div>
-        <div className="flex space-x-3">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/">About</NavLink>
-          <NavLink to="/">Contact</NavLink>
+    <div className=" rounded-lg fixed w-full h-16 z-[999] ">
+      <div>
+        <div className="flex justify-between w-full h-full items-center p-5   max-w-[1280px] mx-auto ">
+          <div>
+            <NavLink to="/">
+              <h1>Event360</h1>
+            </NavLink>
+          </div>
+          <div className="flex space-x-3">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="about">About</NavLink>
+            <NavLink to="contact-us">Contact</NavLink>
+          </div>
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

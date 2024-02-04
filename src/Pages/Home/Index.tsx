@@ -1,7 +1,12 @@
+import Header from "@/components/Header/Header";
+import Services from "@/components/Services/Services";
+
 const Index = () => {
   return (
     <div>
-      <h1>This is home index</h1>
+      <Header />
+
+      <Services />
     </div>
   );
 };

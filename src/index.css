@@ -77,3 +77,19 @@
     @apply font-semibold text-2xl;
   }
 }
+
+.headerBg {
+  /* Background image */
+  background-image: url("./assets/header-bg.jpg");
+
+  background-position: center;
+  background-repeat: no-repeat;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  max-width: 1440px;
+  height: 810px;
+  margin: auto;
+}

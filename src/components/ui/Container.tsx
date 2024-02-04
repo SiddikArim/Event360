@@ -1,16 +1,14 @@
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 
 type props = {
-  children: ReactNode;
+  children: ReactNode | ReactElement;
   className?: string;
 };
 
 const Container = ({ children, className }: props) => {
   return (
-    <div className={cn("max-w-[1280px] mx-auto p-4", className)}>
-      {children}
-    </div>
+    <div className={cn("max-w-[1280px] mx-auto ", className)}>{children}</div>
   );
 };
 

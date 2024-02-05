@@ -3,7 +3,9 @@ import Container from "@/components/ui/Container";
 const About = () => {
   return (
     <Container>
-      <h1>This is Our Team</h1>
+      <div>
+        <h1 className="fixed mt-20">This is Our Team</h1>
+      </div>
     </Container>
   );
 };

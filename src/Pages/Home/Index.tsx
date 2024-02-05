@@ -1,3 +1,4 @@
+import Eventitems from "@/components/EventItems/Eventitems";
 import Header from "@/components/Header/Header";
 import Services from "@/components/Services/Services";
 
@@ -7,6 +8,7 @@ const Index = () => {
       <Header />
 
       <Services />
+      <Eventitems />
     </div>
   );
 };

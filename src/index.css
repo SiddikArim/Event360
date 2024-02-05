@@ -84,7 +84,8 @@
 
   background-position: center;
   background-repeat: no-repeat;
-
+  background-size: cover;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -92,4 +93,22 @@
   max-width: 1440px;
   height: 810px;
   margin: auto;
+
+  clip-path: polygon(0 0, 100% 0%, 100% 87%, 0% 100%);
 }
+.headerBg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 80, 109, 0.5),
+    rgba(22, 52, 110, 0.5)
+  ); /* Adjust colors and opacity as needed */
+}
+/* .headerBg:hover {
+ 
+} */

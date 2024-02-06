@@ -74,7 +74,10 @@
     @apply bg-background text-foreground;
   }
   h1 {
-    @apply font-semibold text-2xl;
+    @apply font-bold text-xl;
+  }
+  h3 {
+    @apply font-bold;
   }
 }
 
@@ -93,7 +96,8 @@
   max-width: 1440px;
   height: 810px;
   margin: auto;
-
+}
+.polygon {
   clip-path: polygon(0 0, 100% 0%, 100% 87%, 0% 100%);
 }
 .headerBg::before {

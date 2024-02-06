@@ -1,5 +1,6 @@
 import Container from "@/components/ui/Container";
 import img from "../../assets/header-bg.jpg";
+import Services from "@/components/Services/Services";
 
 const Contact = () => {
   return (
@@ -15,6 +16,7 @@ const Contact = () => {
           <div className="text-white text-3xl font-bold">Contact Us here</div>
         </div>
       </div>
+      <Services />
     </Container>
   );
 };

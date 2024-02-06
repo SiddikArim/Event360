@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+
 const Nav = () => {
   const variants = {
     hidden: { opacity: 0, y: -30 },
     visible: { opacity: 1, transition: { duration: 1 }, y: 0 },
   };
+
   return (
     <motion.div
       variants={variants}
@@ -19,7 +21,7 @@ const Nav = () => {
               <h1>Event360</h1>
             </NavLink>
           </div>
-          <div className="flex space-x-3">
+          <div className="flex lg:flex-row lg:space-x-5  sm:flex-col sm:space-x-0">
             <NavLink to="/">Home</NavLink>
             <NavLink to="about">About</NavLink>
             <NavLink to="contact-us">Contact</NavLink>

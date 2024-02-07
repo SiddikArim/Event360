@@ -79,6 +79,9 @@
   h3 {
     @apply font-bold;
   }
+  img {
+    border-radius: 10px;
+  }
 }
 
 .headerBg {

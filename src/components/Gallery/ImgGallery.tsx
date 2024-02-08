@@ -31,8 +31,8 @@ const ImgGallery = () => {
         <img className="p-2 rounded-2xl" src={corporation} alt="" />
       </div>
       <div className="col-span-3 py-24">
-        <img className="py-1" src={family} alt="" />
-        <img className="py-1" src={birthday} alt="" />
+        <img className="py-1 rounded-2xl" src={family} alt="" />
+        <img className="py-1 w-4/5 rounded-2xl" src={birthday} alt="" />
       </div>
     </div>
   );

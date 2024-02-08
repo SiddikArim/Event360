@@ -15,16 +15,25 @@ const Nav = () => {
       className="bg-opacity-75 backdrop-filter backdrop-blur-sm rounded-lg fixed  w-full h-16 z-50 "
     >
       <div>
-        <div className="flex justify-between w-full h-full items-center py-5   max-w-[1280px] mx-auto ">
+        <div className="flex justify-between w-full h-full items-center py-5 px-0 sm:px-5  max-w-[1280px] mx-auto ">
           <div>
             <NavLink to="/">
-              <h1>Event360</h1>
+              <h1 className="text-3xl my-auto">
+                <span>Event</span>
+                <span className="text-yellow-400">360</span>
+              </h1>
             </NavLink>
           </div>
-          <div className="flex lg:flex-row lg:space-x-5  sm:flex-col sm:space-x-0">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="about">About</NavLink>
-            <NavLink to="contact-us">Contact</NavLink>
+          <div className="flex flex-row space-x-5  ">
+            <NavLink className="hover:text-yellow-500" to="/">
+              Home
+            </NavLink>
+            <NavLink className="hover:text-yellow-500" to="about">
+              About
+            </NavLink>
+            <NavLink className="hover:text-yellow-500" to="contact-us">
+              Contact
+            </NavLink>
           </div>
         </div>
       </div>

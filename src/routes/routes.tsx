@@ -7,7 +7,7 @@ import Contact from "@/Pages/Contact/Contact";
 import Index from "@/Pages/Home/Index";
 import AdminLayout from "@/components/Layout/AdminLayout";
 
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 
 const route = createBrowserRouter([
   {
@@ -23,7 +23,8 @@ const route = createBrowserRouter([
     path: "/admin",
     element: <AdminLayout />,
     children: [
-      { index: true, element: <Dashboard /> },
+      { index: true, element: <Navigate to="/admin/dashboard" /> },
+      { path: "dashboard", element: <Dashboard /> },
       { path: "service-list", element: <ServiceList /> },
       { path: "add-service", element: <AddService /> },
     ],

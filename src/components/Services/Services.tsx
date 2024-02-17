@@ -1,7 +1,14 @@
+import useServiceData from "@/DataManager/useServiceData";
 import Container from "../ui/Container";
 import SingleCard from "./SingleCard";
 
 const Services = () => {
+  const [servicesData, isServiceDataLoading, isServiceDataError] =
+    useServiceData();
+  if (isServiceDataLoading) return <div>Loading...</div>;
+  else if (isServiceDataError) return <div>Error loading data.</div>;
+  console.log(servicesData);
+
   return (
     <Container className="my-16">
       <div className="flex flex-col items-center">

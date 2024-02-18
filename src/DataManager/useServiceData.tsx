@@ -9,7 +9,7 @@ const useServiceData = () => {
     queryKey: ["services"],
     queryFn: async () => {
       const res = await axios.get("http://localhost:8000/services");
-      console.log(res);
+      // console.log(res);
       return res.data;
     },
   });

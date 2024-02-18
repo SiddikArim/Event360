@@ -21,9 +21,9 @@ const Services = () => {
         </p>
       </div>
       <div className=" my-10  grid sm:grid-cols-1 lg:gap-5 lg:grid-cols-3 md:grid-cols-2">
-        <SingleCard />
-        <SingleCard />
-        <SingleCard />
+        {servicesData.map((service) => (
+          <SingleCard key={service.id} {...service} />
+        ))}
       </div>
     </Container>
   );

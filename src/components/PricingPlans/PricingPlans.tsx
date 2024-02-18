@@ -1,7 +1,13 @@
+import useServiceData from "@/DataManager/useServiceData";
 import Container from "../ui/Container";
 import SinglePricingCard from "./SinglePricingCard";
 
 const PricingPlans = () => {
+  const [servicesData, isServiceDataLoading, isServiceDataError] =
+    useServiceData();
+  if (isServiceDataLoading) return <div>Loading...</div>;
+  else if (isServiceDataError) return <div>Error loading data.</div>;
+  console.log(servicesData);
   return (
     <Container className="flex flex-col items-center max-w-[1080px]">
       <div className="flex flex-col items-center">
@@ -15,9 +21,9 @@ const PricingPlans = () => {
         </p>
       </div>
       <div className="my-10 mx-auto grid sm:grid-cols-1 gap-5 lg:grid-cols-3 md:grid-cols-2">
-        <SinglePricingCard />
-        <SinglePricingCard />
-        <SinglePricingCard />
+        {servicesData.map((service) => (
+          <SinglePricingCard key={service.id} {...service} />
+        ))}
       </div>
     </Container>
   );

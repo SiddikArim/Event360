@@ -1,4 +1,3 @@
-import CreativeSection from "@/components/Creative/CreativeSection";
 import Eventitems from "@/components/EventItems/Eventitems";
 import Gallery from "@/components/Gallery/Gallery";
 import Header from "@/components/Header/Header";
@@ -9,7 +8,7 @@ import Services from "@/components/Services/Services";
 
 const Index = () => {
   return (
-    <div>
+    <div className="">
       <Header />
       <Services />
       <Eventitems />
@@ -17,7 +16,6 @@ const Index = () => {
       <Gallery />
       <RecentEvents />
       <ShowReview />
-      <CreativeSection />
     </div>
   );
 };

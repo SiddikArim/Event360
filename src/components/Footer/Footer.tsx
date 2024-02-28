@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div
       style={{ backgroundColor: "rgb(23,22,17,80%)" }}
-      className=" mt-56 p-16 "
+      className="bottom-0  mt-56 p-16 "
     >
       <Container className="grid sm:grid-cols-2 py-8 lg:grid-cols-12">
         <div className="col-span-2 mb-10">

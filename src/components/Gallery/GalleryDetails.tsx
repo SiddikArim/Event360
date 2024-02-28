@@ -10,19 +10,20 @@ const GalleryDetails = () => {
       </p>
       <ul className="font-semibold py-5">
         <li className="flex p-2">
-          <CheckCircle2 className="mr-2" /> something here
+          <CheckCircle2 className="mr-2" /> One day workshop with industry
+          experts
         </li>
         <li className="flex p-2">
-          <CheckCircle2 className="mr-2" /> something here
+          <CheckCircle2 className="mr-2" /> Lunch and Snack
         </li>
         <li className="flex p-2">
-          <CheckCircle2 className="mr-2" /> something here
+          <CheckCircle2 className="mr-2" /> Custom design
         </li>
         <li className="flex p-2">
-          <CheckCircle2 className="mr-2" /> something here
+          <CheckCircle2 className="mr-2" /> Best Speakers and singers
         </li>
         <li className="flex p-2">
-          <CheckCircle2 className="mr-2" /> something here
+          <CheckCircle2 className="mr-2" /> Front Seat
         </li>
       </ul>
     </div>

@@ -1,4 +1,11 @@
-const SingleReview = ({ data }) => {
+interface TeamMemberData {
+  id: number;
+  position: string;
+  image: string;
+  name: string;
+  review: string;
+}
+const SingleReview = (data: TeamMemberData) => {
   return (
     <div
       key={data.id}

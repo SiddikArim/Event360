@@ -1,5 +1,12 @@
 import useServiceData from "@/DataManager/useServiceData";
 
+interface SingleServiceData {
+  id: string;
+  serviceHead: string;
+  serviceDescription: string;
+  serviceRelatedNames: string[];
+  servicePrice: number;
+}
 const ServiceList = () => {
   const [servicesData, isServiceDataLoading, isServiceDataError] =
     useServiceData();
@@ -26,7 +33,7 @@ const ServiceList = () => {
           </p>
         )} */}
 
-        {servicesData.map((service, index) => (
+        {servicesData.map((service: SingleServiceData, index: number) => (
           <div
             className="border-solid border-2 my-5 p-5 mx-5 space-y-2"
             key={service?.id}

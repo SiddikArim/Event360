@@ -2,6 +2,14 @@ import useServiceData from "@/DataManager/useServiceData";
 import Container from "../ui/Container";
 import SinglePricingCard from "./SinglePricingCard";
 
+interface SingleServiceData {
+  id: string;
+  serviceHead: string;
+  serviceDescription: string;
+  serviceRelatedNames: string[];
+  servicePrice: number;
+}
+
 const PricingPlans = () => {
   const [servicesData, isServiceDataLoading, isServiceDataError] =
     useServiceData();
@@ -21,7 +29,7 @@ const PricingPlans = () => {
         </p>
       </div>
       <div className="my-10 mx-auto grid sm:grid-cols-1 gap-5 lg:grid-cols-3 md:grid-cols-2">
-        {servicesData.map((service) => (
+        {servicesData.map((service: SingleServiceData) => (
           <SinglePricingCard key={service.id} {...service} />
         ))}
       </div>

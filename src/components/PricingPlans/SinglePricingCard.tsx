@@ -9,13 +9,20 @@ import {
 } from "@/components/ui/card";
 import { Button } from "../ui/button";
 import { Check } from "lucide-react";
+interface SingleServiceData {
+  id: string;
+  serviceHead: string;
+  serviceDescription: string;
+  serviceRelatedNames: string[];
+  servicePrice: number;
+}
 
 const SinglePricingCard = ({
   serviceHead,
   serviceDescription,
   serviceRelatedNames,
   servicePrice,
-}) => {
+}: SingleServiceData) => {
   return (
     <Container>
       <Card

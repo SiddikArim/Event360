@@ -14,10 +14,16 @@ import gather from "../../assets/gather.jpg";
 import Container from "../ui/Container";
 import SingleReview from "./SingleReview";
 
-// import SingleReview from "./SingleReview";
+interface TeamMemberData {
+  id: number;
+  position: string;
+  image: string;
+  name: string;
+  review: string;
+}
 
 const ShowReview = () => {
-  const data = [
+  const data: TeamMemberData[] = [
     {
       id: 1,
       position: "Software Engineer",
@@ -79,9 +85,9 @@ const ShowReview = () => {
         <div className="sm:w-4/5 mx-auto lg:w-1/2 md:w-1/2">
           <Carousel>
             <CarouselContent>
-              {data.map((data) => (
-                <CarouselItem>
-                  <SingleReview data={data} key={data.id} />
+              {data.map((item) => (
+                <CarouselItem key={item.id}>
+                  <SingleReview {...item} />
                 </CarouselItem>
               ))}
             </CarouselContent>

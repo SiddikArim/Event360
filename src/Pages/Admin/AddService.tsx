@@ -8,7 +8,7 @@ const AddService = () => {
   const [servicePrice, setServicePrice] = useState("");
   const [serviceDescription, setServiceDescription] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:8000/add-services", {

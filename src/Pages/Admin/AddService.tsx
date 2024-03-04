@@ -3,18 +3,23 @@ import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useState } from "react";
 
+type Index = number;
+
 const AddService = () => {
   const [serviceHead, setServiceHead] = useState("");
   const [servicePrice, setServicePrice] = useState("");
   const [serviceDescription, setServiceDescription] = useState("");
+  const [serviceRelatedNames, setServiceRelatedNames] = useState<string[]>([]);
+  const [relatedName, setRelatedName] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:8000/add-services", {
-        serviceHead, // Send data directly in the request body
+        serviceHead,
         serviceDescription,
         servicePrice,
+        serviceRelatedNames,
       });
 
       if (!response.data.success) {
@@ -24,9 +29,28 @@ const AddService = () => {
       setServiceHead("");
       setServiceDescription("");
       setServicePrice("");
+      setServiceRelatedNames([]);
     } catch (error) {
       console.error("Error adding service:", error);
     }
+  };
+
+  const handleAddRelatedName = () => {
+    if (relatedName.trim() !== "") {
+      setServiceRelatedNames((prevRelatedNames: string[]) => [
+        ...prevRelatedNames,
+        relatedName,
+      ]);
+
+      setRelatedName("");
+    }
+  };
+
+  const handleRemoveRelatedName = (index: Index) => {
+    const updatedRelatedNames = serviceRelatedNames.filter(
+      (_, i) => i !== index
+    );
+    setServiceRelatedNames(updatedRelatedNames);
   };
 
   return (
@@ -75,7 +99,43 @@ const AddService = () => {
               required
             ></textarea>
           </div>
-          <Button type="submit" className="bg-gray-600 mt-5">
+          <div className="form-group">
+            <label className="font-bold" htmlFor="relatedName">
+              Service Features:
+            </label>
+            <div className="flex">
+              <input
+                type="text"
+                id="relatedName"
+                name="relatedName"
+                value={relatedName}
+                onChange={(e) => setRelatedName(e.target.value)}
+                className="flex flex-row border border-solid"
+              />
+              <Button
+                type="button"
+                onClick={handleAddRelatedName}
+                className="bg-gray-400 ml-3 text-white"
+              >
+                Add
+              </Button>
+            </div>
+          </div>
+          <div>
+            {serviceRelatedNames.map((name, index) => (
+              <div key={index} className="flex items-center mt-2">
+                <li>{name}</li>
+                <button
+                  type="button"
+                  onClick={() => handleRemoveRelatedName(index)}
+                  className="bg-black hover:bg-slate-800 ml-2 px-3 py-2 rounded-xl text-white"
+                >
+                  X
+                </button>
+              </div>
+            ))}
+          </div>
+          <Button type="submit" className="bg-gray-600 mt-5 text-white">
             Add Service
           </Button>
         </form>
